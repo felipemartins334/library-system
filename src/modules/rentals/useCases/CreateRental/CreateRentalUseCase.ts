@@ -1,10 +1,10 @@
 import dayjs from "dayjs";
 import { injectable } from "tsyringe";
-import { AppError } from "../../../errors/AppError";
-import { AppDataSource } from "../../../infra/database/data-source";
-import { Book } from "../../books/infra/typeorm/entities/Book";
-import { ICreateRentalDTO } from "../dtos/ICreateRentalDTO";
-import { Rental } from "../infra/typeorm/entities/Rental";
+import { AppError } from "../../../../errors/AppError";
+import { AppDataSource } from "../../../../infra/database/data-source";
+import { Book } from "../../../books/infra/typeorm/entities/Book";
+import { ICreateRentalDTO } from "../../dtos/ICreateRentalDTO";
+import { Rental } from "../../infra/typeorm/entities/Rental";
 
 @injectable()
 class CreateRentalUseCase {

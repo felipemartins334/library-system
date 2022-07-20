@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany, JoinTable } from "typeorm"
+import { Genre } from "./Genre"
 
 @Entity()
 export class Book {
@@ -30,6 +31,10 @@ export class Book {
 
     @Column()
     volume: string
+
+    @ManyToMany(() => Genre)
+    @JoinTable()
+    genres: Genre[]
 
     @CreateDateColumn()
     created_at: Date
