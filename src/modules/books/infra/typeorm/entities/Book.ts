@@ -1,15 +1,14 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToMany, JoinTable } from "typeorm"
-import { Genre } from "./Genre"
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm"
 
 @Entity()
 export class Book {
 
-    constructor(title: string, author: string, year: string, quantity: number, volume: string){
+    constructor(title: string, author: string, year: string, volume: string, genre: string){
         this.title = title
         this.author= author
         this.year = year
-        this.quantity = quantity
         this.volume= volume
+        this.genre = genre
     }
 
     @PrimaryGeneratedColumn()
@@ -27,14 +26,10 @@ export class Book {
     year: string
 
     @Column()
-    quantity: number
-
-    @Column()
     volume: string
 
-    @ManyToMany(() => Genre)
-    @JoinTable()
-    genres: Genre[]
+    @Column()
+    genre: string
 
     @CreateDateColumn()
     created_at: Date

@@ -12,7 +12,6 @@ class GetBooksUseCase {
         .createQueryBuilder("book")
         .where("book.title like :title", { title: `%${title}%` })
         .getMany()
-        console.log(books)
         return books
     }
     else{

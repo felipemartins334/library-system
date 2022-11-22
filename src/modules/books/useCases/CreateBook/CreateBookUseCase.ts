@@ -7,7 +7,7 @@ import { Book } from "../../infra/typeorm/entities/Book";
 @injectable()
 class CreateBookUseCase {
 
-  async execute({author, quantity, title, volume, year}: ICreateBookDTO) {
+  async execute({author, title, volume, year, genre}: ICreateBookDTO) {
     const bookRepository = AppDataSource.getRepository(Book)
     const bookAlreadyExists = await bookRepository.findOneBy({ title })
     
@@ -15,7 +15,7 @@ class CreateBookUseCase {
       throw new AppError("Book already exists")
     }
 
-    const book = new Book(title, author, year, quantity, volume)
+    const book = new Book(title, author, year, volume, genre)
     await bookRepository.save(book)
   }
 }

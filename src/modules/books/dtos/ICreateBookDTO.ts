@@ -5,7 +5,7 @@ interface ICreateBookDTO{
     year: string
     quantity: number
     volume: string
-
+    genre: string
 }
 
 export { ICreateBookDTO }

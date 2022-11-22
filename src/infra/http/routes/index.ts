@@ -8,5 +8,5 @@ const routes = Router()
 routes.use("/users", usersRoutes)
 routes.use("/books", bookRoutes)
 routes.use("/rentals", rentalsRoutes)
-
+   
 export { routes }

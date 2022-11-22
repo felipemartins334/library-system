@@ -16,12 +16,6 @@ class CreateRentalUseCase {
 
     const book = await bookRepository.findOneBy({ id: book_id })
 
-    if(book.quantity===0){
-        throw new AppError("All copies of this book were borrowed")        
-    }
-    
-    book.quantity -= 1
-
     bookRepository.save(book)
 
     const start_date = dayjs()
