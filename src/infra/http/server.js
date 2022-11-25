@@ -24,6 +24,6 @@ app.use((error, request, response, next) => {
         message: `Internal Server Error - ${error.message}`
     });
 });
-app.listen(3333, () => {
+app.listen(process.env.PORT, () => {
     console.log("Server is running");
 });
