@@ -8,11 +8,11 @@ const Book_1 = require("../../modules/books/infra/typeorm/entities/Book");
 const Rental_1 = require("../../modules/rentals/infra/typeorm/entities/Rental");
 exports.AppDataSource = new typeorm_1.DataSource({
     type: "mysql",
-    host: "localhost",
+    host: "sql.freedb.tech",
     port: 3306,
-    username: "sqluser",
-    password: "password",
-    database: "library",
+    username: "freedb_sqluser",
+    password: "nwfrKPR95!gN6wk",
+    database: "freedb_librarysystem",
     entities: [User_1.User, Book_1.Book, Rental_1.Rental],
     synchronize: true,
     logging: false,

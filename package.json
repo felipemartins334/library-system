@@ -15,6 +15,7 @@
     "typeorm": "^0.3.6"
   },
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/infra/http/server.ts"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/infra/http/server.ts",
+    "start": "node src/infra/http/server.js"
   }
 }
