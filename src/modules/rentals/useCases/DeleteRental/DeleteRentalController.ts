@@ -9,7 +9,7 @@ class DeleteRentalsController{
 
     const deleteRentalsUseCase = container.resolve(DeleteRentalUseCase)
     await deleteRentalsUseCase.execute(rental_id)
-    return response.send()
+    return response.status(200).send()
   }
 }
 
