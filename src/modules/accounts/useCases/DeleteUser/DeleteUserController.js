@@ -18,7 +18,7 @@ class DeleteUserController {
             const { user_id } = request.body;
             const deleteUserUseCase = tsyringe_1.container.resolve(DeleteUserUseCase_1.DeleteUserUseCase);
             yield deleteUserUseCase.execute(user_id);
-            return response.send();
+            return response.status(200).send();
         });
     }
 }
