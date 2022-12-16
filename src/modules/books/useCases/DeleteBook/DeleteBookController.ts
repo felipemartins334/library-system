@@ -9,7 +9,7 @@ class DeleteBookController{
 
     const deleteBookUseCase = container.resolve(DeleteBookUseCase)
     await deleteBookUseCase.execute(book_id)
-    return response.send()
+    return response.status(200).send()
   }
 }
 
