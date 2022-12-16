@@ -18,7 +18,7 @@ class DeleteRentalsController {
             const { rental_id } = request.body;
             const deleteRentalsUseCase = tsyringe_1.container.resolve(DeleteRentalsUseCase_1.DeleteRentalUseCase);
             yield deleteRentalsUseCase.execute(rental_id);
-            return response.send();
+            return response.status(200).send('Success');
         });
     }
 }
