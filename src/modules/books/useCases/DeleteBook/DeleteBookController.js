@@ -18,7 +18,7 @@ class DeleteBookController {
             const { book_id } = request.body;
             const deleteBookUseCase = tsyringe_1.container.resolve(DeleteBookUseCase_1.DeleteBookUseCase);
             yield deleteBookUseCase.execute(book_id);
-            return response.send();
+            return response.status(200).send();
         });
     }
 }
